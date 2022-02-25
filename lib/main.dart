@@ -114,13 +114,11 @@ class _AppScaffoldState extends State<AppScaffold>
 
   Future<void> loadWallet() async {
     FlutterSecureStorage storage = const FlutterSecureStorage();
-    if (await storage.containsKey(key: "xco.wallet.privatekey")) {
-      String? _pkey = await storage.read(key: "xco.wallet.privatekey");
-      if (_pkey != null) {
-        Credentials _creds = EthPrivateKey.fromHex(_pkey);
-        _address = await _creds.extractAddress();
-        return;
-      }
+    String? _pkey = await storage.read(key: "xco.wallet.privatekey");
+    if (_pkey != null) {
+      Credentials _creds = EthPrivateKey.fromHex(_pkey);
+      _address = await _creds.extractAddress();
+      return;
     }
     Navigator.of(context).push(
         MaterialPageRoute(builder: (context) => const OnboardingPageView()));
