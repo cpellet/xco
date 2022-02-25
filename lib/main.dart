@@ -123,12 +123,20 @@ class _AppScaffoldState extends State<AppScaffold>
                 SidebarButton(
                   selected: _tabController.index == 0,
                   iconData: CupertinoIcons.home,
-                  onClick: () => _tabController.animateTo(0),
+                  onClick: () {
+                    setState(() {
+                      _tabController.animateTo(0);
+                    });
+                  },
                 ),
                 SidebarButton(
                   selected: _tabController.index == 1,
                   iconData: CupertinoIcons.person_2,
-                  onClick: () => _tabController.animateTo(1),
+                  onClick: () {
+                    setState(() {
+                      _tabController.animateTo(1);
+                    });
+                  },
                 ),
                 const Spacer()
               ],
@@ -167,7 +175,7 @@ class _SidebarButtonState extends State<SidebarButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => widget.onClick,
+      onTap: () => widget.onClick(),
       onHover: (inside) {
         setState(() {
           hovered = inside;
