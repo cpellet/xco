@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:web3dart/credentials.dart';
 import 'package:xco/pages/contacts.dart';
 import 'package:xco/pages/home.dart';
+import 'package:xco/pages/onboarding.dart';
 
 void main() {
   runApp(const XCOApp());
@@ -92,11 +95,15 @@ class AppScaffold extends StatefulWidget {
 class _AppScaffoldState extends State<AppScaffold>
     with TickerProviderStateMixin {
   late TabController _tabController;
+  EthereumAddress? _address;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    if (_address == null) {
+      loadWallet();
+    }
   }
 
   @override
@@ -105,19 +112,33 @@ class _AppScaffoldState extends State<AppScaffold>
     super.dispose();
   }
 
+  Future<void> loadWallet() async {
+    FlutterSecureStorage storage = const FlutterSecureStorage();
+    if (await storage.containsKey(key: "xco.wallet.privatekey")) {
+      String? _pkey = await storage.read(key: "xco.wallet.privatekey");
+      if (_pkey != null) {
+        Credentials _creds = EthPrivateKey.fromHex(_pkey);
+        _address = await _creds.extractAddress();
+        return;
+      }
+    }
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const OnboardingPageView()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: [
           Container(
-            width: 120,
+            width: 150,
             padding: const EdgeInsets.all(15),
             child: Column(
               children: [
-                Text(
-                  "XCO",
-                  style: Theme.of(context).textTheme.headline5,
+                Image.asset(
+                  "assets/images/xco_dark.png",
+                  filterQuality: FilterQuality.medium,
                 ),
                 const Spacer(),
                 SidebarButton(
