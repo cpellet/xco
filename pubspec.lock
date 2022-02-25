@@ -15,6 +15,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+  bip32:
+    dependency: transitive
+    description:
+      name: bip32
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  bip39:
+    dependency: transitive
+    description:
+      name: bip39
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.6"
   boolean_selector:
     dependency: transitive
     description:
@@ -22,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  bs58check:
+    dependency: transitive
+    description:
+      name: bs58check
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   characters:
     dependency: transitive
     description:
@@ -50,6 +71,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
+  crypto:
+    dependency: transitive
+    description:
+      name: crypto
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -57,6 +92,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  decimal:
+    dependency: transitive
+    description:
+      name: decimal
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.3"
+  ethers:
+    dependency: "direct main"
+    description:
+      name: ethers
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+3"
   fake_async:
     dependency: transitive
     description:
@@ -64,6 +120,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.45.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -95,13 +158,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web3:
-    dependency: "direct main"
+  hex:
+    dependency: transitive
     description:
-      name: flutter_web3
+      name: hex
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.9"
+    version: "0.2.0"
   hovering:
     dependency: "direct main"
     description:
@@ -109,6 +172,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.4"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   js:
     dependency: transitive
     description:
@@ -116,6 +193,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
+  json_rpc_2:
+    dependency: transitive
+    description:
+      name: json_rpc_2
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   lints:
     dependency: transitive
     description:
@@ -172,6 +256,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.4.0"
+  pointycastle:
+    dependency: transitive
+    description:
+      name: pointycastle
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.5.1"
+  rational:
+    dependency: transitive
+    description:
+      name: rational
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
